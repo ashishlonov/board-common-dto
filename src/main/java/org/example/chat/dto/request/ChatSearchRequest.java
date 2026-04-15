@@ -8,6 +8,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Поиск чатов с пагинацией.
+ *
+ * <p>Поля: page — номер страницы (начиная с 0), size — размер страницы (1–100),
+ * name — фильтр по названию чата.</p>
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

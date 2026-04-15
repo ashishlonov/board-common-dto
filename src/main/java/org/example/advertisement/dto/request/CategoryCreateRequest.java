@@ -4,6 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 
+/**
+ * Запрос на создание категории
+ *
+ * @param name       название категории (2–100 символов)
+ * @param slug       URL-friendly идентификатор (опционально, генерируется автоматически)
+ * @param parentId   ID родительской категории (для вложенности)
+ * @param sortOrder  порядок сортировки (0–1000)
+ */
 @Builder
 public record CategoryCreateRequest (
         @NotBlank(message = "Название категории не может быть пустым")

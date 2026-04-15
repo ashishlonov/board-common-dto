@@ -5,6 +5,16 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import org.example.advertisement.dto.help.AttributeType;
 
+/**
+ * Запрос на редактирование атрибута категории (все поля опциональны)
+ *
+ * @param name          новое название
+ * @param code          новый код
+ * @param attributeType новый тип
+ * @param unit          новая единица измерения
+ * @param optionsJson   новый JSON вариантов
+ * @param isRequired    новый флаг обязательности
+ */
 public record CategoryAttributeUpdateRequest(
         @Size(min = 2, max = 100, message = "Название атрибута от 2 до 100 символов")
         String name,

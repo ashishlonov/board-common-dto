@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Пользователю нужно подтвердить email.
+ *
+ * <p>Поля: id — ID пользователя, email — email для подтверждения, emailToken — токен подтверждения.</p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

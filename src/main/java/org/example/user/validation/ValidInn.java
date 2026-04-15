@@ -9,6 +9,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Проверка формата российского ИНН.
+ * Допустимы 10 цифр (юридическое лицо) или 12 цифр (ИП) с проверкой контрольной суммы.
+ */
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = InnValidator.class)

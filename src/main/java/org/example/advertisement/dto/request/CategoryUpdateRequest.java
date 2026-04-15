@@ -3,6 +3,14 @@ package org.example.advertisement.dto.request;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
 
+/**
+ * Запрос на редактирование категории
+ *
+ * @param name       новое название категории
+ * @param slug       новый slug
+ * @param parentId   ID родительской категории
+ * @param sortOrder  порядок сортировки
+ */
 public record CategoryUpdateRequest(
         @NotBlank(message = "Название категории не может быть пустым")
         @Size(min = 2, max = 100, message = "Название категории от 2 до 100 символов")

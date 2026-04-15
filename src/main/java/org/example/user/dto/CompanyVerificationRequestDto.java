@@ -8,6 +8,21 @@ import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Заявка на верификацию компании (полная информация для админа)
+ *
+ * @param id            уникальный идентификатор заявки
+ * @param userId        ID пользователя, подавшего заявку
+ * @param userName      имя пользователя
+ * @param inn           ИНН компании
+ * @param companyName   название компании
+ * @param contactName   контактное лицо
+ * @param documentUrls  ссылки на документы для подтверждения
+ * @param status        статус заявки (ожидание, одобрена, отклонена)
+ * @param adminComment комментарий администратора
+ * @param createdAt     время создания заявки
+ * @param reviewedAt    время рассмотрения
+ */
 @Schema(description = "Заявка на верификацию компании")
 public record CompanyVerificationRequestDto(
         @Schema(description = "ID заявки")

@@ -4,6 +4,12 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+/**
+ * Географический адрес объявления.
+ *
+ * <p>Поля: country — страна, city — город, street — улица,
+ * houseNumber — номер дома, formattedAddress — полный отформатированный адрес.</p>
+ */
 @Builder
 @Getter
 @NoArgsConstructor

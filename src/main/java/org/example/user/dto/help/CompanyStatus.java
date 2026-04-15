@@ -5,6 +5,19 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Arrays;
 
+/**
+ * Статусы компании из ФНС (Федеральная налоговая служба).
+ *
+ * <ul>
+ *   <li><b>ACTIVE</b> - компания активна и действует.</li>
+ *   <li><b>PENDING_VERIFICATION</b> - документы отправлены на модерацию, ожидает проверки.</li>
+ *   <li><b>LIQUIDATING</b> - компания в процессе ликвидации.</li>
+ *   <li><b>LIQUIDATED</b> - компания ликвидирована.</li>
+ *   <li><b>REORGANIZING</b> - компания в процессе реорганизации.</li>
+ *   <li><b>BANKRUPT</b> - компания признана банкротом.</li>
+ *   <li><b>UNKNOWN</b> - статус компании неизвестен.</li>
+ * </ul>
+ */
 public enum CompanyStatus {
 
     ACTIVE("Действующее",           "Компания активна"),

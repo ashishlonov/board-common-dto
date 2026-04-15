@@ -5,6 +5,16 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
+/**
+ * Универсальная обёртка для постраничного ответа
+ *
+ * @param content        список элементов на текущей странице
+ * @param page           номер текущей страницы
+ * @param size           размер страницы
+ * @param totalElements  общее количество элементов
+ * @param totalPages     общее количество страниц
+ * @param last           является ли страница последней
+ */
 public record PageResponse<T>(
         List<T> content,
         int page,

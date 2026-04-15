@@ -10,13 +10,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Используется для изменения модели объявления
- * @param name
- * @param description
- * @param cost
- * @param location
- * @param isActive
- * @param attributes
+ * Запрос на редактирование объявления
+ *
+ * @param name         новое название объявления
+ * @param description  новое описание
+ * @param cost         новая цена
+ * @param location     новый адрес
+ * @param isActive     флаг активности (активно/неактивно)
+ * @param attributes   обновлённые значения атрибутов
  */
 public record AdvertisementUpdateRequest(
         @NotBlank(message = "Название не может быть пустым")

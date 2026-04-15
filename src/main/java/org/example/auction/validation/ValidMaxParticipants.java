@@ -5,6 +5,9 @@ import org.example.auction.validator.MaxParticipantsValidator;
 
 import java.lang.annotation.*;
 
+/**
+ * Проверка, что число участников аукциона входит в допустимый список: 10, 25, 50, 100.
+ */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = MaxParticipantsValidator.class)

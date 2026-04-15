@@ -6,6 +6,18 @@ import lombok.Builder;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Карточка чата в списке диалогов
+ *
+ * @param id                уникальный идентификатор чата
+ * @param opponent          имя собеседника
+ * @param avatarOfOpponent  аватар собеседника
+ * @param title             заголовок чата
+ * @param photoUrl          фото объявления
+ * @param lastMessage       текст последнего сообщения
+ * @param lastMessageAt     время последнего сообщения
+ * @param createdAt         время создания чата
+ */
 @Builder
 public record ChatResponse (
         UUID id,

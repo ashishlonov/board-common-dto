@@ -13,22 +13,24 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *   Используется при отдаче модели объявления при:
- *    - создании
- *    - получения конкретного объявления по id
- *    - обновлении модели
- * @param id
- * @param name
- * @param description
- * @param cost
- * @param location
- * @param categoryId
- * @param categoryName
- * @param owner
- * @param attributes
- * @param photos
- * @param isActive
- * @param createdAt
+ * Полный ответ с информацией об объявлении
+ *
+ * @param id               уникальный идентификатор
+ * @param name             название
+ * @param description      описание
+ * @param cost             цена
+ * @param location         адрес
+ * @param categoryId       ID категории
+ * @param viewCount        количество просмотров
+ * @param categoryName     название категории
+ * @param primaryPhotoUrl  URL главного фото
+ * @param owner            данные владельца
+ * @param attributes       значения атрибутов
+ * @param photos           список фото
+ * @param isActive         активно ли объявление
+ * @param createdAt        дата создания
+ * @param updatedAt        дата последнего обновления
+ * @param deletedAt        дата удаления (если удалено)
  */
 @Builder
 public record AdvertisementResponseDto(

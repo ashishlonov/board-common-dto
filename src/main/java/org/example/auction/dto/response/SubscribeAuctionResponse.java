@@ -6,6 +6,13 @@ import lombok.Builder;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Подтверждение подписки на аукцион
+ *
+ * @param auctionId ID аукциона
+ * @param title     название аукциона
+ * @param startsAt  время начала торгов
+ */
 @Builder
 public record SubscribeAuctionResponse(
 

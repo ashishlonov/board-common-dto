@@ -9,6 +9,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Проверка значения атрибута объявления.
+ * Проверяет, что значение не является объектом или массивом,
+ * не превышает maxLength и не содержит отрицательных чисел.
+ */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = AttributeValueValidator.class)

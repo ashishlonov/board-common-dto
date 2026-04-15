@@ -3,6 +3,14 @@ package org.example.user.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.example.user.dto.help.CompanyStatus;
 
+/**
+ * Информация о компании пользователя
+ *
+ * @param inn            ИНН компании
+ * @param name           название компании
+ * @param status         статус из ФНС (действующая, ликвидирована и т.д.)
+ * @param statusMessage  пояснение к статусу
+ */
 public record CompanyInfoDto(
         String        inn,
         String        name,

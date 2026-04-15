@@ -9,6 +9,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Проверка списка загружаемых файлов изображений.
+ * Список не должен быть пустым, количество файлов не больше maxCount (по умолчанию 10),
+ * каждый файл не пустой и не больше maxSizeBytes (по умолчанию 10 МБ).
+ */
 @Target(ElementType.PARAMETER)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ImageFilesValidator.class)

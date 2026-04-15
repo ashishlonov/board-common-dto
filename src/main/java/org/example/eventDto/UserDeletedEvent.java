@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Пользователь удалён.
+ *
+ * <p>Поля: id — ID удалённого пользователя.</p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

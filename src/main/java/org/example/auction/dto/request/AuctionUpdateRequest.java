@@ -5,6 +5,12 @@ import lombok.Builder;
 
 import java.math.BigDecimal;
 
+/**
+ * Запрос на обновление аукциона (все поля опциональны)
+ *
+ * @param minBidStep   новый минимальный шаг ставки
+ * @param currentPrice новая текущая цена
+ */
 @Builder
 public record AuctionUpdateRequest(
 

@@ -8,6 +8,13 @@ import org.example.user.dto.help.VerificationStatus;
 
 import java.util.UUID;
 
+/**
+ * Запрос администратора на рассмотрение заявки верификации
+ *
+ * @param requestId     ID заявки для рассмотрения
+ * @param status        решение: APPROVED (одобрить) или REJECTED (отклонить)
+ * @param adminComment комментарий администратора (обязателен)
+ */
 @Schema(description = "Запрос на рассмотрение заявки верификации компании")
 public record CompanyVerificationReviewRequest(
         @Schema(description = "ID заявки")

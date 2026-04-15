@@ -6,9 +6,10 @@ import org.example.advertisement.validation.ValidAttributeValue;
 import tools.jackson.databind.JsonNode;
 
 /**
- * Используется для добавления атрибутов к модели объявления при ее создании
- * @param attributeId
- * @param value
+ * Ввод значения атрибута при создании объявления
+ *
+ * @param attributeId  ID атрибута
+ * @param value        значение в формате JSON (строка, число, булево и т.д.)
  */
 public record AttributeValueInput(
         @NotNull(message = "ID атрибута обязателен")

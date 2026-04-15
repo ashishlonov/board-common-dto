@@ -7,6 +7,16 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import org.example.advertisement.dto.help.AttributeType;
 
+/**
+ * Запрос на создание атрибута категории
+ *
+ * @param name          название атрибута
+ * @param code          уникальный код (строчные буквы, цифры, подчёркивание)
+ * @param attributeType тип: строка, число, дата, булево, выбор, мультивыбор
+ * @param unit          единица измерения (например, "кг", "см")
+ * @param optionsJson   JSON-список вариантов для SELECT/MULTISELECT
+ * @param isRequired    обязателен ли атрибут
+ */
 public record CategoryAttributeCreateRequest(
         @NotBlank(message = "Название атрибута не может быть пустым")
         @Size(min = 2, max = 100,

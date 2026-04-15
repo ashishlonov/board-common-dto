@@ -5,6 +5,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Полные данные фотографии
+ *
+ * @param id             уникальный идентификатор
+ * @param photoType      тип (аватар, главное, галерея)
+ * @param sortOrder      порядок сортировки в галерее
+ * @param isPrimary      является ли главным фото
+ * @param thumbnailUrl   URL миниатюры
+ * @param mediumUrl      URL среднего размера
+ * @param originalUrl    URL оригинала
+ * @param fileSizeBytes  размер файла в байтах
+ * @param createdAt      время загрузки
+ * @param deletedAt      время удаления (если удалено)
+ */
 public record PhotoDto(
         UUID id,
         @JsonProperty("photo_type")

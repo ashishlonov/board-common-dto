@@ -9,10 +9,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Проверка совпадения двух полей на уровне класса.
+ * Параметр shouldMatch управляет проверкой: true — поля должны совпадать,
+ * false — поля не должны совпадать (например, старый и новый пароль).
+ */
 @Target({ElementType.TYPE, ElementType.ANNOTATION_TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = FieldsMatchValidator.class)
-//@Repeatable()???
 public @interface FieldsMatch {
     String field();
     String fieldMatch();

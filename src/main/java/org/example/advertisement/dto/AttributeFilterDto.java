@@ -7,11 +7,12 @@ import lombok.Builder;
 import java.math.BigDecimal;
 
 /**
- * Помогает в поиске по фильтрам
- * @param code
- * @param valueString
- * @param valueFrom
- * @param valueTo
+ * Фильтр по атрибуту при поиске объявлений
+ *
+ * @param code         код атрибута для фильтрации
+ * @param valueString  точное строковое значение
+ * @param valueFrom    минимальное значение (для числовых атрибутов)
+ * @param valueTo      максимальное значение (для числовых атрибутов)
  */
 @Builder
 public record AttributeFilterDto(

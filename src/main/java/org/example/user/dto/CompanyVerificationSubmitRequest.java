@@ -9,6 +9,16 @@ import org.example.user.validation.ValidInn;
 
 import java.util.List;
 
+/**
+ * Запрос пользователя на верификацию компании
+ *
+ * @param name          имя пользователя
+ * @param phoneNumber   номер телефона в формате +7 (XXX) XXX-XX-XX
+ * @param inn           ИНН компании (10 или 12 цифр)
+ * @param companyName   название компании
+ * @param contactName   контактное лицо
+ * @param documentUrls  ссылки на документы для подтверждения
+ */
 @Schema(description = "Запрос на подтверждение компании")
 public record CompanyVerificationSubmitRequest(
         @Schema(example = "Иван Иванов", description = "Имя пользователя")

@@ -11,14 +11,15 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *     Используется для создания модели объявления
- * @param name
- * @param description
- * @param cost
- * @param location
- * @param categoryId
- * @param attributes
- * @param tempPhotoIds
+ * Запрос на создание объявления
+ *
+ * @param name         название объявления (3–100 символов)
+ * @param description  описание (до 5000 символов)
+ * @param cost         цена
+ * @param location     адрес (страна, город, улица, дом)
+ * @param categoryId   ID категории, к которой относится объявление
+ * @param attributes   список значений атрибутов категории
+ * @param tempPhotoIds ID временных фото, загруженных до создания объявления (макс. 10)
  */
 @Builder
 public record AdvertisementCreateRequestDto(

@@ -10,12 +10,24 @@ import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
-///toDO:::после такого как сделаю рейтинг систему нужно будет добавить сюда поле и отзывы
-//добавитьь кучу всего например тот же самый  рейтинг  и тд
-
-/// отдельный профиль
-/// фото имя оценка дата осздания активные(не) объявления
-///отзывы о продавце
+/**
+ * Публичный профиль пользователя — отображается на странице пользователя
+ *
+ * @param id                   уникальный идентификатор
+ * @param name                 имя пользователя
+ * @param profileType          тип профиля: личный или компания
+ * @param companyName          название компании (для COMPANY)
+ * @param contactName          контактное лицо
+ * @param inn                  ИНН компании
+ * @param companyStatus        статус компании из ФНС
+ * @param companyStatusMessage пояснение к статусу компании
+ * @param phoneNumber          номер телефона
+ * @param avatarUrl            URL аватара
+ * @param createdAt            время регистрации
+ * @param updatedAt            время последнего обновления
+ * @param deletedAt            время удаления (если удалён)
+ * @param advertisements       список объявлений пользователя
+ */
 @Builder
 public record UserProfilePublicDto (
         UUID id,

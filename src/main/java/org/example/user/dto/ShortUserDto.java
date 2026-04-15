@@ -6,6 +6,20 @@ import lombok.Builder;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Краткая карточка пользователя
+ *
+ * @param id               уникальный идентификатор
+ * @param name             имя пользователя
+ * @param phoneNumber      номер телефона
+ * @param companyName      название компании (если профиль типа COMPANY)
+ * @param profileType      тип профиля: личный или компания
+ * @param companyStatus    статус компании из ФНС
+ * @param advertisementsCount количество объявлений пользователя
+ * @param avatarUrl        URL аватара
+ * @param createdAt        время регистрации
+ * @param deletedAt        время удаления (если удалён)
+ */
 @Builder
 public record ShortUserDto(
         UUID id,

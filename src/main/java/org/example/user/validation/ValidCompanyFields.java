@@ -9,6 +9,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ * Проверка полей компании на уровне класса.
+ * Для профиля типа COMPANY обязательны companyName и inn,
+ * для профиля типа PERSONAL companyName не должно быть заполнено.
+ */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = CompanyFieldsValidator.class)

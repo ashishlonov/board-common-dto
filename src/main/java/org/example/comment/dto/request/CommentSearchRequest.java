@@ -12,6 +12,15 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Поиск комментариев с фильтрами.
+ *
+ * <p>Поля: page — номер страницы (начиная с 0), size — размер страницы (1–100),
+ * userId — фильтр по ID пользователя, textSearch — поиск по тексту комментария,
+ * showOnlyDeleted — показать только удалённые комментарии,
+ * advertisementOwnerId — фильтр по владельцу объявления,
+ * advertisementIds — список ID объявлений (заполняется внутренне, игнорируется в JSON).</p>
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

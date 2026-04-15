@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Новый пользователь зарегистрировался.
+ *
+ * <p>Поля: id — ID пользователя, firstName — имя пользователя, phoneNumber — номер телефона.</p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

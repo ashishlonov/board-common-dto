@@ -7,11 +7,18 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
+/**
+ * Категория объявлений с деревом дочерних категорий.
+ *
+ * <p>Поля: id — уникальный идентификатор, name — название категории,
+ * slug — URL-friendly идентификатор, parentId — ID родительской категории (null для корневых),
+ * sortOrder — порядок сортировки, children — вложенные дочерние категории,
+ * attributes — список атрибутов, принадлежащих категории.</p>
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-///toDo::: подумать потом еще праивльная ли дто
 public class CategoryDto {
     private Long id;
     private String name;

@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
+/**
+ * Аватар пользователя загружен.
+ *
+ * <p>Поля: userProfileId — ID пользователя, avatarUrl — URL загруженного аватара.</p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

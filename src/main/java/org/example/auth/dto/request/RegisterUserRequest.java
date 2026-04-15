@@ -8,6 +8,17 @@ import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import org.example.auth.validation.FieldsMatch;
 
+/**
+ * Запрос на регистрацию нового пользователя
+ *
+ * @param email           email
+ * @param password        пароль (минимум 8 символов, цифра, строчная, заглавная буква, спецсимвол)
+ * @param confirmPassword подтверждение пароля (должно совпадать с password)
+ * @param name            имя (только буквы, пробелы, дефис)
+ * @param phoneNumber     номер телефона в формате +7 (XXX) XXX-XX-XX
+ * @param captchaText     текст с картинки-капчи
+ * @param captchaToken    токен капчи
+ */
 @Builder
 @FieldsMatch(field = "password", fieldMatch = "confirmPassword")
 public record RegisterUserRequest(

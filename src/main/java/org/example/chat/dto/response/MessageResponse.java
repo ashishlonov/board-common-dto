@@ -7,6 +7,16 @@ import org.example.chat.dto.help.ChatMessageStatus;
 import java.time.Instant;
 import java.util.UUID;
 
+/**
+ * Сообщение в чате
+ *
+ * @param id        уникальный идентификатор сообщения
+ * @param senderId  ID отправителя
+ * @param text      текст сообщения
+ * @param status    статус (прочитано, отправляется, не прочитано, ошибка)
+ * @param sentAt    время отправки
+ * @param editedAt  время последнего редактирования
+ */
 @Builder
 public record MessageResponse(
         UUID id,

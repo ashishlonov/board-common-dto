@@ -5,6 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Пользователь запросил сброс пароля.
+ *
+ * <p>Поля: email — email пользователя, resetToken — токен для сброса пароля.</p>
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

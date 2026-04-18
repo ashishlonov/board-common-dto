@@ -25,7 +25,7 @@ import java.util.UUID;
 public record AdvertisementShortDto(
         UUID id,
         String name,
-        BigDecimal cost,
+        Integer cost,
         Location location,
         @JsonProperty("primary_photo_url")
         String primaryPhotoUrl,

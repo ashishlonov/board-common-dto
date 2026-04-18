@@ -49,15 +49,15 @@ public class AdvertisementSearchRequest {
     @JsonProperty("cost_from")
     @DecimalMin(value = "0.0", inclusive = true,
             message = "Минимальная цена не может быть отрицательной")
-    @Digits(integer = 10, fraction = 2,
-            message = "Некорректный формат минимальной цены")
-    private BigDecimal costFrom;
+//    @Digits(integer = 10, fraction = 2,
+//            message = "Некорректный формат минимальной цены")
+    private Integer costFrom;
     @JsonProperty("cost_to")
     @DecimalMin(value = "0.0", inclusive = true,
             message = "Максимальная цена не может быть отрицательной")
-    @Digits(integer = 10, fraction = 2,
-            message = "Некорректный формат максимальной цены")
-    private BigDecimal costTo;
+//    @Digits(integer = 10, fraction = 2,
+//            message = "Некорректный формат максимальной цены")
+    private Integer costTo;
     @JsonProperty("is_active")
     private Boolean isActive;
     @JsonProperty("owner_id")

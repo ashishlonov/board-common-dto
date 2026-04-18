@@ -28,15 +28,15 @@ public record AttributeFilterDto(
         String valueString,
         @DecimalMin(value = "0.0", inclusive = true,
                 message = "Минимальное значение не может быть отрицательным")
-        @Digits(integer = 10, fraction = 2,
-                message = "Некорректный формат минимального значения")
+//        @Digits(integer = 10, fraction = 2,
+//                message = "Некорректный формат минимального значения")
         @JsonProperty("value_from")
-        BigDecimal valueFrom,
+        Integer valueFrom,
         @DecimalMin(value = "0.0", inclusive = true,
                 message = "Максимальное значение не может быть отрицательным")
-        @Digits(integer = 10, fraction = 2,
-                message = "Некорректный формат максимального значения")
+//        @Digits(integer = 10, fraction = 2,
+//                message = "Некорректный формат максимального значения")
         @JsonProperty("value_to")
-        BigDecimal valueTo
+        Integer valueTo
 ) {
 }

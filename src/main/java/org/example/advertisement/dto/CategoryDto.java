@@ -20,10 +20,10 @@ import java.util.List;
 @Builder
 @Data
 public class CategoryDto {
-    private Long id;
+    private Integer id;
     private String name;
     private String slug;
-    private Long parentId;
+    private Integer parentId;
     private Integer sortOrder;
     private List<CategoryDto> children;
     private List<CategoryAttributeDto> attributes;

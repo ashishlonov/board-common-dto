@@ -31,13 +31,13 @@ public record AdvertisementCreateRequestDto(
         @NotNull(message = "Цена обязательна")
         @DecimalMin(value = "0.0", message = "Цена должна быть больше 0")
         @DecimalMax(value = "999999999.99", message = "Цена слишком большая")
-        @Digits(integer = 10, fraction = 2, message = "Цена: максимум 10 цифр до запятой и 2 после")
-        BigDecimal cost,
+//        @Digits(integer = 10, fraction = 2, message = "Цена: максимум 10 цифр до запятой и 2 после")
+        Integer cost,
         @NotNull(message = "Локация обязательна")
         @Valid
         Location location,
         @NotNull(message = "Категория обязательна")
-        Long categoryId,
+        Integer categoryId,
         @Valid
         List<AttributeValueInput> attributes,
         @Size(max = 10, message = "Максимум 10 фото")

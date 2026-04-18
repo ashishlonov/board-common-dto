@@ -1,6 +1,7 @@
 package org.example.photo.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Builder;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -19,6 +20,7 @@ import java.util.UUID;
  * @param createdAt      время загрузки
  * @param deletedAt      время удаления (если удалено)
  */
+@Builder
 public record PhotoDto(
         UUID id,
         @JsonProperty("photo_type")

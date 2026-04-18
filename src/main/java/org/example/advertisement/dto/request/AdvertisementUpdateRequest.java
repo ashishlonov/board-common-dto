@@ -30,9 +30,9 @@ public record AdvertisementUpdateRequest(
                 message = "Цена должна быть больше 0")
         @DecimalMax(value = "999999999.99",
                 message = "Цена слишком большая")
-        @Digits(integer = 10, fraction = 2,
-                message = "Цена: максимум 10 цифр до запятой и 2 после")
-        BigDecimal cost,
+//        @Digits(integer = 10, fraction = 2,
+//                message = "Цена: максимум 10 цифр до запятой и 2 после")
+        Integer cost,
         @Valid
         Location location,
         @JsonProperty("is_active")

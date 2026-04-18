@@ -37,10 +37,10 @@ public record AdvertisementResponseDto(
         UUID id,
         String name,
         String description,
-        BigDecimal cost,
+        Integer cost,
         Location location,
         @JsonProperty("category_id")
-        Long categoryId,
+        Integer categoryId,
         @JsonProperty("view_count")
         Integer viewCount,
         @JsonProperty("category_name")

@@ -21,7 +21,7 @@ public record CategoryUpdateRequest(
         String slug,
         @Positive(message = "ID родительской категории должен быть положительным")
         @JsonProperty("parent_id")
-        Long parentId,
+        Integer parentId,
         @Min(value = 0, message = "Порядок сортировки не может быть отрицательным")
         @Max(value = 1000, message = "Порядок сортировки не более 1000")
         @JsonProperty("sort_order")

@@ -16,5 +16,5 @@ public record AttributeValueInput(
         @Positive(message = "ID атрибута должен быть положительным")
         Long attributeId,
         @ValidAttributeValue(maxLength = 100)
-        JsonNode value
+        Object value
 ) {}

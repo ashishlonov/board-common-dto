@@ -3,10 +3,8 @@ package org.example.advertisement.validator;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.example.advertisement.validation.ValidAttributeValue;
-import tools.jackson.databind.JsonNode;
 
-public class AttributeValueValidator
-        implements ConstraintValidator<ValidAttributeValue, JsonNode> {
+public class AttributeValueValidator implements ConstraintValidator<ValidAttributeValue, Object> {
 
     private int maxLength;
 
@@ -16,43 +14,38 @@ public class AttributeValueValidator
     }
 
     @Override
-    public boolean isValid(JsonNode value, ConstraintValidatorContext ctx) {
+    public boolean isValid(Object value, ConstraintValidatorContext ctx) {
+        if (value == null) return true;
 
-        if (value == null || value.isNull()) return true;
-
-        if (value.isObject()) {
+        if (value instanceof java.util.Map) {
             ctx.disableDefaultConstraintViolation();
-            ctx.buildConstraintViolationWithTemplate(
-                            "Значение атрибута не может быть объектом")
+            ctx.buildConstraintViolationWithTemplate("Значение атрибута не может быть объектом")
                     .addConstraintViolation();
             return false;
         }
 
-        if (value.isArray()) {
+        if (value instanceof java.util.Collection) {
             ctx.disableDefaultConstraintViolation();
-            ctx.buildConstraintViolationWithTemplate(
-                            "Значение атрибута не может быть массивом")
+            ctx.buildConstraintViolationWithTemplate("Значение атрибута не может быть массивом")
                     .addConstraintViolation();
             return false;
         }
 
-        String stringValue = value.isTextual()
-                ? value.asText()
-                : value.toString();
+        if (value instanceof Number num) {
+            if (num.doubleValue() < 0) {
+                ctx.disableDefaultConstraintViolation();
+                ctx.buildConstraintViolationWithTemplate("Числовое значение атрибута не может быть отрицательным")
+                        .addConstraintViolation();
+                return false;
+            }
+            return true;
+        }
 
+        String stringValue = value.toString();
         if (stringValue.length() > maxLength) {
             ctx.disableDefaultConstraintViolation();
             ctx.buildConstraintViolationWithTemplate(
-                            "Значение атрибута не более %d символов"
-                                    .formatted(maxLength))
-                    .addConstraintViolation();
-            return false;
-        }
-
-        if (value.isNumber() && value.asDouble() < 0) {
-            ctx.disableDefaultConstraintViolation();
-            ctx.buildConstraintViolationWithTemplate(
-                            "Числовое значение атрибута не может быть отрицательным")
+                            "Значение атрибута не более %d символов".formatted(maxLength))
                     .addConstraintViolation();
             return false;
         }
